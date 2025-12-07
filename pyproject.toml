@@ -1,0 +1,17 @@
+[build-system]
+requires = ["scikit-build-core", "pybind11", "cmake", "ninja"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "mygauss"
+version = "0.1.0"
+description = "MLOps matrix inversion using Gauss-Jordan method to find inverse matrix."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy" 
+]
+
+[tool.scikit-build]
+cmake.version = ">=3.15"
+wheel.expand-macos-universal-tags = true
