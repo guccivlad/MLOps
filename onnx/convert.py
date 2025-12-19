@@ -1,3 +1,4 @@
+import os
 from typing import Any
 
 import numpy as np
@@ -61,6 +62,8 @@ if __name__ == "__main__":
         "input_ids": {0: batch},
         "attention_mask": {0: batch},
     }
+
+    os.makedirs("model_repository/rubert_onnx/1", exist_ok=True)
     onnx_path = "model_repository/rubert_onnx/1/ruBert_base_embedder.onnx"
     torch.onnx.export(
         model,
