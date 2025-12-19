@@ -1,0 +1,25 @@
+name: "rubert_onnx"
+platform: "onnxruntime_onnx"
+default_model_filename: "ruBert_base_embedder.onnx"
+max_batch_size: 512
+
+input [
+  {
+    name: "INPUT_IDS"
+    data_type: TYPE_INT32
+    dims: [16]
+  },
+  {
+    name: "ATTENTION_MASK"
+    data_type: TYPE_INT64
+    dims: [16]
+  }
+]
+
+output [
+  {
+    name: "EMBEDDINGS"
+    data_type: TYPE_FP32
+    dims: [32]
+  }
+]
